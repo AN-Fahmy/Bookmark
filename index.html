@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts File -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sevillana&display=swap&family=Poetsen+One&display=swap" rel="stylesheet">
+    <!-- Icon URL -->
+    <link rel="shortcut icon" href="image/icon.jpg" type="image/x-icon">
+    <!-- FontAwesome Css File -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Bootstrap Css File -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Css File Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bookmark</title>
+</head>
+<body class="overflow-x-hidden">
+    
+    <div class="container">
+        <h1 class="text-center mt-3 display-5 mx-auto rounded-2 px-3 fw-bold position-relative">Bookmark</h1>
+        <div class="form mt-3 p-3 position-relative rounded-2">
+            <h2 class="text-center mx-auto py-2 "><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i></h2>
+            <label for="site-name" class="position-relative px-3 "><i class="fa-solid fa-book-bookmark"></i> Site Name</label>
+            <input oninput="validtionInputs(this)" class="form-control mt-2 mb-4" type="text" id="siteName" placeholder="Bookmark Name">
+
+            <label for="site-url" class="position-relative px-3 "><i class="fa-solid fa-link"></i> Site URL</label>
+            <input oninput="validtionInputs(this)" class="form-control my-2" type="text" id="siteUrl" placeholder="Website URL">
+
+            <button id="submit" class="btn border border-1 m-auto d-block px-4">Submit</button>
+            <button id="update" class="btn border border-1 m-auto d-block px-4 d-none">Update</button>
+        </div>
+
+        <div class="modal d-none justify-content-centet align-items-center" tabindex="-1" role="dialog" id="modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h4 class="modal-title h1 text-danger">Oooops <i class="fa-solid fa-face-frown"></i></h4>
+                        <button onclick="closeMsg()" type="button" class="close ms-auto btn fs-1" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body py-0">
+                        <h4>Site Name or Url is not valid, Please follow the rules below :</h4>
+                        <p><i class="fa-solid fa-right-long text-danger me-1"></i> Site name must contain at least 3 characters And The First Letter must be Uppercase</p>
+                        <p><i class="fa-solid fa-right-long text-danger me-1"></i> Site URL must be Start 'www.' , contain at least 3 characters And End '.com'</p>
+                    </div>
+                    <div class="modal-footer border-0 py-0">
+                        <button onclick="closeMsg()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="data-site bg-dark my-3 shadow-lg rounded-2">
+            <div class="row text-white">
+                <div class="col-12">
+                    <div class="head-table d-flex justify-content-between align-items-center p-2 flex-column">
+                        <h3 class="mb-4">Data Sites</h3>
+                        <input oninput="displaySites()" type="search" name="search" class="form-control w-50 mx-auto" id="searchInput" placeholder="Search By Name">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 table-responsive">
+                <table class="table text-center shadow-lg table table-striped table-dark table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Webiste Name</th>
+                            <th>Visit</th>
+                            <th>Delete</th>
+                            <th>Update</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableData">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.datatables.net/v/dt/dt-2.0.7/datatables.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

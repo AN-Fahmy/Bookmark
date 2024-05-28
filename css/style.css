@@ -1,0 +1,226 @@
+*{
+    transition: all .5s;
+}
+::selection{
+    background-color: #fec260;
+}
+/* Scrollbar Style */
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px #333; 
+    background-color: #CCC;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: #050505;
+}
+/* End Scrollbar Style */
+/*###############################################*/
+h1{
+    font-family: "Sevillana", cursive;
+    width: fit-content;
+}
+h1::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background:linear-gradient(to top, #fec260,#fff);
+    z-index: -1;
+    animation: head-animate 2s infinite alternate;
+}
+@keyframes head-animate {
+    0%{
+        height: 30%;
+    }
+    100%{
+        height: 90%;
+    }
+}
+/*###############################################*/
+.form{
+    box-shadow: 0 0 10px 10px #00000025 !important;
+}
+.form::before,.form::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 50px;
+    background: linear-gradient(to right, #00fffc, rgba(0, 119, 255, 0.226));
+    box-shadow: 0 0 10px 5px #60fefe;
+}
+.form::before{
+    top: 0;
+    left: 0;
+    animation: formAnimateright 2s infinite alternate;
+}
+.form::after{
+    bottom: 0;
+    right: 0;
+    animation: formAnimateleft 2s infinite alternate;
+}
+@keyframes formAnimateright {
+    0%{
+        top: 0;
+        left: 0;
+    }
+    100%{
+        top: 0;
+        left: 100%;
+        transform: translateX(-100%);
+    }
+}
+@keyframes formAnimateleft {
+    0%{
+        bottom: 0;
+        right: 0;
+    }
+    100%{
+        bottom: 0;
+        right: 100%;
+        transform: translateX(100%);
+    }
+}
+h2{
+    font-family: "Edu TAS Beginner", cursive;
+    width: fit-content;
+    background:linear-gradient(to right, #006e18,#d6ec0d);
+    background-clip: text;
+    color: transparent;
+    animation: moving-head 2s infinite ease-in-out;
+}
+@keyframes moving-head {
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x:383px;
+    }
+}
+label::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background:linear-gradient(to top, #fec260,#fff);
+    z-index: -1;
+    animation: head-animate 2s infinite alternate;
+}
+/*#################################################*/
+.data-site h3{
+    font-weight: 700;
+    letter-spacing: 5px;
+    font-family: "Playfair Display", serif;
+    background: linear-gradient(to right, #c7f3f2, rgb(147, 169, 196));
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    animation: move-to-left 2s alternate infinite ease-in-out;
+    transition: all .5s
+}
+@keyframes move-to-left {
+    0%{
+        background-position-x: 205px;
+    }
+}
+.tableContent{
+    vertical-align: middle;
+}
+th{
+    font-family: "Playfair Display", serif;
+}
+.visit,.delete,.update,#submit,#update{
+    font-weight: 700;
+    color: transparent;
+    text-transform: uppercase;
+    animation: move-to-right 2s alternate infinite ease-in-out;
+    transition: all .5s
+}
+th{
+    color: rgb(45, 212, 184) !important;
+}
+.index-site ,.name-site{
+    color: rgb(92, 169, 199) !important;
+    font-weight: 600
+}
+.visit,#submit{
+    background: linear-gradient(to right, #00fffc, rgb(0, 119, 255));
+    background-clip: text;
+}
+.delete{
+    background: linear-gradient(to right, #ff5943, rgb(255, 0, 0));
+    background-clip: text;
+}
+.update,#update{
+    background: linear-gradient(to right, rgb(134, 255, 103), rgb(255, 238, 0));
+    background-clip: text;
+}
+@keyframes move-to-right {
+    0%{
+        background-position-x: 100px;
+    }
+}
+.visit:hover,#submit:hover{
+    box-shadow: inset 0 0 20px 5px #00fffc;
+    color: transparent;
+}
+.delete:hover{
+    box-shadow: inset 0 0 20px 5px #ff5943;
+    color: transparent;
+}
+.update:hover,#update:hover{
+    box-shadow: inset 0 0 20px 5px rgb(134, 255, 103);
+    color: transparent;
+}
+#searchInput::placeholder{
+    color: #ffffff5b;
+}
+#searchInput{
+    background-color: transparent;
+    color: #fff;
+}
+.modal{
+    background-color: #dddddd9f;
+    font-family: "Poetsen One", sans-serif;
+}
+.modal-content{
+    position: relative;
+    z-index: 1;
+}
+.modal-content::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #c7f3f2, rgb(147, 169, 196));
+    animation: bgMsg 1s infinite alternate;
+    z-index: -1;
+}
+@keyframes bgMsg {
+    0%{
+        opacity: 0;
+    } 
+    100%{
+        opacity: 1;
+    }
+}
+.modal-body p i{
+    animation: animate 1s infinite;
+    position: relative;
+}
+@keyframes animate {
+    0%{
+        left: 0;
+    }
+    100%{
+        left: 4px;
+    }
+}
