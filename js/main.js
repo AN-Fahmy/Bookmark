@@ -63,24 +63,12 @@ function clearInput(){
     siteURL.classList.remove("is-valid");
 }
 
-// Delete Sites If You Need
-function deleteSites(index){
-    sites.splice(index,1)
-    localStorage.setItem("allSites",JSON.stringify(sites))
-    displaySites()
-}
-
-// Visit Sites
-function visitSites(index){
-    window.open(`https://${sites[index].url}`, '_black')
-}
-
 // Validation Sites Data
 function validtionInputs(element){
     let inputValue = element.value,
         regex = {
-            siteName : /^[A-Z][a-z]{3,}$/,
-            siteUrl : /^www\.[a-z]{3,}\.com$/i,
+            siteName : /^[a-z]\w{2,}?/i,
+            siteUrl : /^(https:\/\/|http:\/\/)?(www\.)?\w{2,}\..{2,}$/i,
         }
 
     if(regex[element.id].test(inputValue) == true){
@@ -92,6 +80,22 @@ function validtionInputs(element){
         element.classList.remove("is-valid")
         return false
     }
+}
+// Close Modal
+function closeMsg(){
+    modal.classList.replace("d-flex", "d-none")
+}
+
+// Delete Sites If You Need
+function deleteSites(index){
+    sites.splice(index,1)
+    localStorage.setItem("allSites",JSON.stringify(sites))
+    displaySites()
+}
+
+// Visit Sites
+function visitSites(index){
+    window.open(`https://${sites[index].url}`, '_black')
 }
 
 // Set And Update Data
@@ -115,7 +119,4 @@ btnUpdate.onclick = function(){
     btnUpdate.classList.add("d-none")
     btnSubmit.classList.remove("d-none")
 }
-// Close Modal
-function closeMsg(){
-    modal.classList.replace("d-flex", "d-none")
-}
+
