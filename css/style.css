@@ -101,11 +101,6 @@ h2{
         background-position-x:383px;
     }
 }
-@media (max-width:380px) {
-    h2{
-        font-size: 20px;
-    }
-}
 label::after{
     content: "";
     position: absolute;
