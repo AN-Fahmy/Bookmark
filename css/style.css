@@ -42,49 +42,6 @@ h1::before{
     }
 }
 /*###############################################*/
-.form{
-    box-shadow: 0 0 10px 10px #00000025 !important;
-}
-.form::before,.form::after{
-    content: "";
-    position: absolute;
-    height: 2px;
-    width: 50px;
-    background: linear-gradient(to right, #00fffc, rgba(0, 119, 255, 0.226));
-    box-shadow: 0 0 10px 5px #60fefe;
-}
-.form::before{
-    top: 0;
-    left: 0;
-    animation: formAnimateright 2s infinite alternate;
-}
-.form::after{
-    bottom: 0;
-    right: 0;
-    animation: formAnimateleft 2s infinite alternate;
-}
-@keyframes formAnimateright {
-    0%{
-        top: 0;
-        left: 0;
-    }
-    100%{
-        top: 0;
-        left: 100%;
-        transform: translateX(-100%);
-    }
-}
-@keyframes formAnimateleft {
-    0%{
-        bottom: 0;
-        right: 0;
-    }
-    100%{
-        bottom: 0;
-        right: 100%;
-        transform: translateX(100%);
-    }
-}
 h2{
     font-family: "Edu TAS Beginner", cursive;
     width: fit-content;
@@ -99,6 +56,11 @@ h2{
     }
     100%{
         background-position-x:383px;
+    }
+}
+@media (max-width:320px) {
+    h2{
+        font-size: 18px;
     }
 }
 label::after{
@@ -135,7 +97,7 @@ label::after{
 th{
     font-family: "Playfair Display", serif;
 }
-.visit,.delete,.update,#submit,#update{
+.visit,.delete,.update{
     font-weight: 700;
     color: transparent;
     text-transform: uppercase;
@@ -149,7 +111,7 @@ th{
     color: rgb(92, 169, 199) !important;
     font-weight: 600
 }
-.visit,#submit{
+.visit{
     background: linear-gradient(to right, #00fffc, rgb(0, 119, 255));
     background-clip: text;
 }
@@ -157,7 +119,7 @@ th{
     background: linear-gradient(to right, #ff5943, rgb(255, 0, 0));
     background-clip: text;
 }
-.update,#update{
+.update{
     background: linear-gradient(to right, rgb(134, 255, 103), rgb(255, 238, 0));
     background-clip: text;
 }
@@ -166,7 +128,7 @@ th{
         background-position-x: 100px;
     }
 }
-.visit:hover,#submit:hover{
+.visit:hover{
     box-shadow: inset 0 0 20px 5px #00fffc;
     color: transparent;
 }
@@ -174,7 +136,7 @@ th{
     box-shadow: inset 0 0 20px 5px #ff5943;
     color: transparent;
 }
-.update:hover,#update:hover{
+.update:hover{
     box-shadow: inset 0 0 20px 5px rgb(134, 255, 103);
     color: transparent;
 }
@@ -223,4 +185,121 @@ th{
     100%{
         left: 4px;
     }
+}
+
+/* Button Submit And Update Style */
+#submit, #update{
+    cursor: pointer;
+    background-color: transparent !important;
+    outline: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: .5s;
+    transition-delay: 0s;
+}
+#submit{
+    border: 2px solid rgb(0, 119, 255) !important;
+    color: rgb(0, 119, 255);
+}
+#update{
+    border: 2px solid rgb(134, 255, 103) !important;
+    color: rgb(134, 255, 103);
+}
+#submit span, #update span{
+    position: relative;
+    z-index: 120 !important;
+}
+#submit:hover, #update:hover{
+    font-weight: bold;
+    color: #fff;
+    transition-delay: 1.3s;
+    box-shadow: 0 0 10px rgb(0, 119, 255),
+    0 0 20px rgb(0, 119, 255),
+    0 0 40px rgb(0, 119, 255),
+    0 0 80px rgb(0, 119, 255),
+    0 0 100px rgb(0, 119, 255);
+}
+#update:hover{
+    font-weight: bold;
+    color: #fff;
+    transition-delay: 1.5s;
+    box-shadow: 0 0 10px rgb(134, 255, 103),
+                0 0 20px rgb(134, 255, 103),
+                0 0 40px rgb(134, 255, 103),
+                0 0 80px rgb(134, 255, 103),
+                0 0 100px rgb(134, 255, 103);
+}
+#submit::before, #update::before{
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 2px;
+    transition: width 0.5s,
+                left 0.5s, 
+                height 0.5s,
+                box-shadow 0.5s;
+    transition-delay: 1s, 0.5s, 0s, 0s;
+}
+#submit::before{
+    background-color: rgb(0, 119, 255);
+    box-shadow: 5px -8px 0 rgb(0, 119, 255),
+                5px 8px 0 rgb(0, 119, 255);
+}
+#update::before{
+    background-color: rgb(134, 255, 103);
+    box-shadow: 5px -8px 0 rgb(134, 255, 103),
+                5px 8px 0 rgb(134, 255, 103);
+}
+#submit:hover::before{
+    width: 60%;
+    height: 100%;
+    left: -2px;
+    transition-delay: 0s, 0.5s, 1s, 1s;
+    box-shadow: 5px 0 0 rgb(0, 119, 255), 5px 0 0 rgb(0, 119, 255);
+}
+#update:hover::before{
+    width: 60%;
+    height: 100%;
+    left: -2px;
+    transition-delay: 0s, 0.5s, 1s, 1s;
+    box-shadow: 5px 0 0 rgb(134, 255, 103), 5px 0 0 rgb(134, 255, 103);
+}
+
+#submit::after,#update::after{
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 2px;
+    transition: width 0.5s,
+                right 0.5s, 
+                height 0.5s,
+                box-shadow 0.5s;
+    transition-delay: 1s, 0.5s, 0s, 0s;
+}
+#submit::after{
+    background-color: rgb(0, 119, 255);
+    box-shadow: -5px -8px 0 rgb(0, 119, 255),
+                -5px 8px 0 rgb(0, 119, 255);
+}
+#update::after{
+    background-color: rgb(134, 255, 103);
+    box-shadow: -5px -8px 0 rgb(134, 255, 103),
+                -5px 8px 0 rgb(134, 255, 103);
+}
+#submit:hover::after,#update:hover::after{
+    width: 60%;
+    height: 102%;
+    right: -2px;
+    box-shadow: -5px 0 0 rgb(0, 119, 255), -5px 0 0 rgb(0, 119, 255);
+    transition-delay: 0s, 0.5s, 1s, 1s;
+}
+#update:hover::after{
+    box-shadow: -5px 0 0 rgb(134, 255, 103), -5px 0 0 rgb(134, 255, 103);
 }

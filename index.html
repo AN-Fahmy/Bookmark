@@ -21,16 +21,16 @@
     
     <div class="container">
         <h1 class="text-center mt-3 display-5 mx-auto rounded-2 px-3 fw-bold position-relative">Bookmark</h1>
-        <div class="form mt-3 p-3 position-relative rounded-2">
+        <div class="form shadow-lg mt-3 p-3 position-relative rounded-2">
             <h2 class="text-center mx-auto py-2 "><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i></h2>
             <label for="site-name" class="position-relative px-3 "><i class="fa-solid fa-book-bookmark"></i> Site Name</label>
-            <input oninput="validtionInputs(this)" class="form-control mt-2 mb-4" type="text" id="siteName" placeholder="Bookmark Name">
+            <input oninput="validtionInputs(this)" class="form-control mt-2 mb-4 shadow" type="text" id="siteName" placeholder="Bookmark Name">
 
             <label for="site-url" class="position-relative px-3 "><i class="fa-solid fa-link"></i> Site URL</label>
-            <input oninput="validtionInputs(this)" class="form-control my-2" type="text" id="siteUrl" placeholder="Website URL">
+            <input oninput="validtionInputs(this)" class="form-control my-2 shadow" type="text" id="siteUrl" placeholder="Website URL">
 
-            <button id="submit" class="btn border border-1 m-auto d-block px-4">Submit</button>
-            <button id="update" class="btn border border-1 m-auto d-block px-4 d-none">Update</button>
+            <button id="submit" class="btn m-auto d-block px-4 mt-3 position-relative fw-bold "><span>Submit</span></button>
+            <button id="update" class="btn m-auto d-block px-4 mt-3 position-relative fw-bold d-none"><span>Update</span></button>
         </div>
 
         <div class="modal d-none justify-content-centet align-items-center" tabindex="-1" role="dialog" id="modal">
@@ -54,7 +54,7 @@
             </div>
         </div>
 
-        <div class="data-site bg-dark my-3 shadow-lg rounded-2">
+        <div class="data-site bg-dark my-3 rounded-2">
             <div class="row text-white">
                 <div class="col-12">
                     <div class="head-table d-flex justify-content-between align-items-center p-2 flex-column">
