@@ -95,7 +95,7 @@ function deleteSites(index){
 
 // Visit Sites
 function visitSites(index){
-    window.open(`https://${sites[index].url}`, '_black')
+    window.open(`${sites[index].url}`, '_black')
 }
 
 // Set And Update Data
